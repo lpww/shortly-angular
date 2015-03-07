@@ -21,6 +21,7 @@ module.exports = {
   },
 
   allLinks: function (req, res, next) {
+
   var findAll = Q.nbind(Link.find, Link);
 
   findAll({})

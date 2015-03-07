@@ -8,8 +8,8 @@
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
     })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',

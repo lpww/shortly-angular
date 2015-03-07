@@ -1,6 +1,8 @@
-<div id='container' ng-controller ='LinksController'>
-  <!-- Your html here -->
-  <ul>
-    <li ng-repeat="link in data.links">{{ link }}</li>
-  </ul>
+<div id='container' class = 'link' ng-controller ='LinksController'>
+    <div class='link info' ng-repeat="link in data.links">
+      <div class='link visits'><span class='link visits count'> {{ link.visits }} </span>Visits</div>
+      <div class='link title'> {{ link.title }} </div>
+      <div class='link original'> {{ link.url }} </div>
+      <a href='/api/{{ link.code }}'> {{ link.base_url }}/{{ link.code }} </div>
+    </div>
 </div>
