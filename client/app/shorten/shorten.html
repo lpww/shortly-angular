@@ -4,9 +4,13 @@
     <button>Create Url</button>
     <span ng-show='addLinkForm.urlfield.$error.pattern'>{{ errorMessage }}</span>
   </form>
-  <ul>
-    <li ng-repeat = "link in recent"> {{ link }}</li>
-  </ul>
+
+ <div class='link info' ng-repeat="link in recent">
+    <div class='link title'> {{ link.title }} </div>
+    <div class='link original'> {{ link.url }} </div>
+    <a href='/api/links/{{ link.code }}'> {{ link.base_url }}/{{ link.code }} </div>
+  </div>
+
 </div>
 
 
