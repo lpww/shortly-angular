@@ -1,13 +1,12 @@
 <div id='container'>
-  <form name="addLinkForm" ng-submit='addLink()'>
-    <input type='text' ng-model='link'>
+  <form name="addLinkForm" ng-submit='addLink(addLinkForm.$valid)' novalidate>
+    <input name='urlfield' type='url' require ng-pattern="regex" ng-model='link' placeholder='http://'>
     <button>Create Url</button>
+    <span ng-show='addLinkForm.urlfield.$error.pattern'>{{ errorMessage }}</span>
   </form>
-
   <ul>
     <li ng-repeat = "link in recent"> {{ link }}</li>
   </ul>
-
 </div>
 
 
