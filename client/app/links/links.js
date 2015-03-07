@@ -1,18 +1,18 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, $http) {
   $scope.data = {};
 
   $scope.getLinks = function(){
-    $http.get(Links).
+    $http({
+      url: '/api/links',
+      method: 'GET'
+    }).
       success(function(data, status, headers, config){
-        console.log('data', data);
-      });
-      error(function(data, status, headers, config){
-
+        $scope.data.links = data;
+      })
+      .error(function(data, status, headers, config){
       });
   };
-
+  $scope.getLinks();
 });
-
-

@@ -1,4 +1,6 @@
-<div id='container' ng-controller ='LinksController' ng-init ="getLinks()" >
+<div id='container' ng-controller ='LinksController'>
   <!-- Your html here -->
- {{ Links }}
+  <ul>
+    <li ng-repeat="link in data.links">{{ link }}</li>
+  </ul>
 </div>
