@@ -1,8 +1,11 @@
 <div id='container' class = 'link' ng-controller ='LinksController'>
-    <div class='link info' ng-repeat="link in data.links">
+    <input ng-model = "searchLink"></input>
+
+    <div class='link info' ng-repeat="link in data.links | filter :{title:searchLink}">
       <div class='link visits'><span class='link visits count'> {{ link.visits }} </span>Visits</div>
       <div class='link title'> {{ link.title }} </div>
       <div class='link original'> {{ link.url }} </div>
-      <a href='/api/{{ link.code }}'> {{ link.base_url }}/{{ link.code }} </div>
+      <a href='/api/links/{{ link.code }}'> {{ link.base_url }}/{{ link.code }} </div>
     </div>
+
 </div>

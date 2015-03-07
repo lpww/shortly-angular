@@ -7,10 +7,6 @@
 ])
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/', {
-      templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
-    })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
@@ -26,6 +22,10 @@
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
+    })
+    .otherwise({
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
     });
 
     // We add our $httpInterceptor into the array
